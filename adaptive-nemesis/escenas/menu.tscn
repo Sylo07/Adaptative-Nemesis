@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgodddpig2g2b"]
+
+[ext_resource type="Script" uid="uid://gk034e54h6i4" path="res://codigo/menu.gd" id="1_6cq3m"]
+[ext_resource type="AudioStream" uid="uid://tugal0mq7ri2" path="res://sonido/Bloodborne Soundtrack OST - Moonlit Melody.mp3" id="2_5t3kx"]
+[ext_resource type="AudioStream" uid="uid://c137y6flnnc0v" path="res://sonido/Voicy_New key item.mp3" id="3_56ah5"]
+[ext_resource type="FontFile" uid="uid://c72fi7lt21dvd" path="res://fuente/OptimusPrinceps.ttf" id="4_xqndx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6cq3m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -129.0
+offset_right = 207.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 29
+
+[node name="musicafondo" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("2_5t3kx")
+volume_db = 11.82
+autoplay = true
+bus = &"musica_fondo"
+parameters/looping = true
+
+[node name="sonidobotones2" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("3_56ah5")
+volume_db = -7.496
+
+[node name="partidaNueva" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 37
+text = "NUEVA PARTIDA"
+
+[node name="continuar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 37
+text = "CONTINUAR
+"
+
+[node name="opciones" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 37
+text = "OPCIONES
+"
+
+[node name="salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xqndx")
+theme_override_font_sizes/font_size = 37
+text = "SALIR
+"
+
+[connection signal="pressed" from="VBoxContainer/partidaNueva" to="." method="_on_partida_nueva_pressed"]

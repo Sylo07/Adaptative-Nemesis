@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://y2fjjp2ejnvy"]
+
+[ext_resource type="Texture2D" uid="uid://bu486cf54g3jm" path="res://imagenes/sala boss.png" id="1_kuydw"]
+[ext_resource type="Texture2D" uid="uid://2fd0rdilin60" path="res://imagenes/Plan 2.png" id="2_6yhps"]
+[ext_resource type="PackedScene" uid="uid://batwvs1lg3enk" path="res://escenas/cofre.tscn" id="2_n7wk3"]
+[ext_resource type="PackedScene" uid="uid://ccc1whqorq440" path="res://escenas/pj_2.tscn" id="3_kuydw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i8gd"]
+size = Vector2(69, 1071)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+metadata/_edit_lock_ = true
+
+[node name="fondo" type="TextureRect" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+offset_right = 1915.0
+offset_bottom = 1070.0
+texture = ExtResource("1_kuydw")
+metadata/_edit_lock_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer/fondo"]
+position = Vector2(-25, 19)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer/fondo/CharacterBody2D"]
+position = Vector2(1968, 526)
+shape = SubResource("RectangleShape2D_1i8gd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer/fondo/CharacterBody2D"]
+position = Vector2(24.5, 525.5)
+shape = SubResource("RectangleShape2D_1i8gd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ParallaxBackground/ParallaxLayer/fondo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.281
+anchor_top = 0.07
+anchor_right = 0.281
+anchor_bottom = 0.07
+offset_left = -555.52
+offset_top = -49.6
+offset_right = 1372.48
+offset_bottom = 1046.4
+texture = ExtResource("2_6yhps")
+metadata/_edit_lock_ = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_n7wk3")]
+position = Vector2(1029, 550)
+
+[node name="movimiento1" parent="." instance=ExtResource("3_kuydw")]
+position = Vector2(-119, 569)

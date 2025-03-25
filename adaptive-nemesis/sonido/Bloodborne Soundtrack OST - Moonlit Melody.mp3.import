@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tugal0mq7ri2"
+path="res://.godot/imported/Bloodborne Soundtrack OST - Moonlit Melody.mp3-9180647e45bb24a992ea8759e82635b3.mp3str"
+
+[deps]
+
+source_file="res://sonido/Bloodborne Soundtrack OST - Moonlit Melody.mp3"
+dest_files=["res://.godot/imported/Bloodborne Soundtrack OST - Moonlit Melody.mp3-9180647e45bb24a992ea8759e82635b3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

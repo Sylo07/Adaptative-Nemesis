@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://daewa6tr3e1nh"]
+
+[ext_resource type="Script" uid="uid://dhh123qfrsu12" path="res://codigo/options.gd" id="1_7774a"]
+[ext_resource type="AudioStream" uid="uid://tugal0mq7ri2" path="res://sonido/Bloodborne Soundtrack OST - Moonlit Melody.mp3" id="2_dxpcx"]
+[ext_resource type="AudioStream" uid="uid://c137y6flnnc0v" path="res://sonido/Voicy_New key item.mp3" id="3_uoerg"]
+[ext_resource type="FontFile" uid="uid://c72fi7lt21dvd" path="res://fuente/OptimusPrinceps.ttf" id="4_vsgmi"]
+[ext_resource type="Script" uid="uid://cmai7rfoofgbj" path="res://codigo/h_slider.gd" id="5_73vdf"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7774a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.5
+anchor_right = 0.514
+anchor_bottom = 0.5
+offset_left = -285.128
+offset_top = -162.0
+offset_right = 283.872
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 29
+
+[node name="musicafondo" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("2_dxpcx")
+volume_db = 11.82
+autoplay = true
+bus = &"musica_fondo"
+parameters/looping = true
+
+[node name="sonidobotones2" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("3_uoerg")
+volume_db = -7.496
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vsgmi")
+theme_override_font_sizes/font_size = 27
+text = "Musica"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_73vdf")
+
+[node name="atras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_vsgmi")
+theme_override_font_sizes/font_size = 25
+text = "ATRAS"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/atras" to="." method="_on_atras_pressed"]

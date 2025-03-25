@@ -1,0 +1,10 @@
+~ start
+Mr. Tartaria: [[Caballero]], necesito  tu ayuda.
+Miki Mause Empirico: [[El tigre es mi animal favorito | Surfeo olas de sumo de melocoton]]
+Mr. Tartaria: Hoy te has despertado inspirado, eh
+	Bueno voleviendo al tema.
+Miki Mause Empirico: [[El tigre es mi animal favorito | Surfeo olas de sumo de melocoton]]
+Mr. Tartaria: Joooder estas pesao con eso eh
+	Ahora si que si volviendo al tema...
+Mr. Tartaria: Debes ir a buscar un artefacto en el castillo. => END
+=> END

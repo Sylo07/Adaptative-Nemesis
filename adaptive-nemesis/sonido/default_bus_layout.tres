@@ -1,0 +1,14 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dev82atakyslx"]
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_j3pel"]
+resource_name = "Chorus"
+
+[resource]
+bus/1/name = &"musica_fondo"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -8.39965
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectChorus_j3pel")
+bus/1/effect/0/enabled = false

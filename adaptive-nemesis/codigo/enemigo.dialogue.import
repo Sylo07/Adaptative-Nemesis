@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ewqnjo3jtcgj"
+path="res://.godot/imported/enemigo.dialogue-0016dd582b653f96beef1579f12dceb5.tres"
+
+[deps]
+
+source_file="res://codigo/enemigo.dialogue"
+dest_files=["res://.godot/imported/enemigo.dialogue-0016dd582b653f96beef1579f12dceb5.tres"]
+
+[params]
+
+defaults=true
